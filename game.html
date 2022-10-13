@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css">
+    
+
+</head>
+<body class="bg-dark" style="overflow-x:hidden;">
+    <div class="modal fade" id="Modal" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="ModalLabel"></h1>
+            </div>
+            <!-- <div class="modal-body">
+              ...
+            </div> -->
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    
+    <div class="row mt-5">
+        <div class="col-4"></div>
+            <div class="col">
+
+                <div class="table-responsive" style="overflow-x:hidden;">
+                    <table class="table">
+                        <tr>
+                            <td class="border border-warning border-start-0 border-top-0" id ="cell"><button cellIndex = "0" class="btn btn-lg btn-dark w-50 m-5" data-bs-toggle="modal" data-bs-target="#Modal" id="gameBtn">&nbsp;<br>&nbsp;</button></td>
+                            <td class="border border-warning border-top-0" id ="cell"><button cellIndex = "1" class="btn btn-lg btn-dark w-50 m-5" data-bs-toggle="modal" data-bs-target="#Modal" id="gameBtn">&nbsp;<br>&nbsp;</button></td>
+                            <td class="border border-warning border-end-0 border-top-0" id ="cell"><button cellIndex = "2" class="btn btn-lg btn-dark w-50 m-5" data-bs-toggle="modal" data-bs-target="#Modal" id="gameBtn">&nbsp;<br>&nbsp;</button></td>
+                        </tr>
+                        <tr>
+                            <td class="border border-warning border-start-0" data-bs-toggle="modal" data-bs-target="#Modal" id ="cell"><button cellIndex = "3" class="btn btn-lg btn-dark w-50 m-5" id="gameBtn">&nbsp;<br>&nbsp;</button></td>
+                            <td class="border border-warning" data-bs-toggle="modal" data-bs-target="#Modal" id ="cell"><button cellIndex = "4" class="btn btn-lg btn-dark w-50 m-5" id="gameBtn">&nbsp;<br>&nbsp;</button></td>
+                            <td class="border border-warning border-end-0" data-bs-toggle="modal" data-bs-target="#Modal" id ="cell"><button cellIndex = "5" class="btn btn-lg btn-dark w-50 m-5" id="gameBtn">&nbsp;<br>&nbsp;</button></td>
+                        </tr>
+                        <tr>
+                            <td class="border border-warning border-start-0 border-bottom-0" data-bs-toggle="modal" data-bs-target="#Modal" id ="cell"><button cellIndex = "6" class="btn btn-lg btn-dark w-50 m-5" id="gameBtn">&nbsp;<br>&nbsp;</button></td>
+                            <td class="border border-warning border-bottom-0" data-bs-toggle="modal" data-bs-target="#Modal" id ="cell"><button cellIndex = "7" class="btn btn-lg btn-dark w-50 m-5" id="gameBtn">&nbsp;<br>&nbsp;</button></td>
+                            <td class="border border-warning border-end-0 border-bottom-0" data-bs-toggle="modal" data-bs-target="#Modal" id ="cell"><button cellIndex = "8" class="btn btn-lg btn-dark w-50 m-5" id="gameBtn">&nbsp;<br>&nbsp;</button></td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        <div class="col-4"></div>
+    </div>
+
+    <!-- <div class="row"> -->
+        <div class="col-3"></div>
+            <div class="col text-center">
+                <button id="restartButton" class="btn btn-lg btn-warning mb-3 mt-5">Restart</button>
+                <h2 class="text-warning">"The only way to win is not to play" &nbsp;- Joshua</h2>
+            </div>
+            
+        <div class="col-3"></div>
+    </div>
+    
+    
+
+   
+
+
+
+<script src="week11script.js"></script>
+<script src="node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+<script src="node_modules/jquery/dist/jquery.js"></script>
+    
+</body>
+</html
