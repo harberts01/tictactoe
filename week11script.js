@@ -1,8 +1,10 @@
 
 const button = document.querySelectorAll("#gameBtn");
+const restartBtn = document.querySelector("  #restartButton")
 const cell = document.querySelector("#cell");
 const modalHeader = document.querySelector("#ModalLabel");
 let currentPlayer = "X"
+
 //possible win situations for cellIndexes.
 let winConditions = [
     [0, 1, 2],
@@ -33,11 +35,16 @@ function playGame(){
             }else{
                 playerX.push(index);
             };
-             
-        winScenario();// calling winScenario after each move to ensure a win does not exist 
+        console.log(playerO)
         changePlayer();//this will alternate players after a move is selected and also update Modal text
         
-    }));   
+    }));
+
+    winCheck(playerO);
+    winCheck(playerX); 
+    console.log(winCheck(playerO));
+    console.log(winCheck(playerX));
+
 };
 
 
@@ -52,17 +59,12 @@ function changePlayer(){
 
 //this function will create a win scenario. win will = true when the if statement conditions
 //have been met. 
-function winScenario(){
-    let win = true; //console.logging as false consistently. Even when the scenario for "O" is a win. I am looking for this to flip to true
-    //when player arrays and winConditions have been compared and a win condition exists in either of the player arrays.
 
-    for(let i = 0; i<winConditions.length; i++){
-        for(let j = 0; j<winConditions[i].length; j++){
-            if(playerO.indexOf(winConditions[i][j]) === -1){
-                win = false;
-                break;
-            }
-        
+
+function winCheck(playerArry){
+     for(let i = 0; i < winConditions.length; i++){
+        if (winConditions[i].every(elem => playerArry.includes(elem))){
+            return true
         }
-    } console.log(win);
+    }return false;
 }
