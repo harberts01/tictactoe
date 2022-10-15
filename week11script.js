@@ -41,7 +41,7 @@ function playGame(){
             playerX.push(Number(index));
         };
 
-        window.setTimeout(function(){
+        window.setTimeout(function(){                           //timeouts the modal on every click. 11sec timeout.
             $('#Modal').modal('hide');
         }, 1100);
         
