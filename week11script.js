@@ -36,7 +36,7 @@ function playGame(){
 
         if(currentPlayer == "O"){                               //this if statement manipulates the buttons when it is O's turn; also pushes index numbers to correct player arrays.
             button.className = 'btn btn-lrg btn-danger w-50 m-5'
-            playerO.push(Number(index));                        //changes the string index into a number and pushes to player arrays to compare the winConditions.
+            playerO.push(Number(index));                        //the Number method changes the string recieved from HTML into a number.
         }else{
             playerX.push(Number(index));
         };
