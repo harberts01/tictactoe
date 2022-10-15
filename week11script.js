@@ -47,7 +47,7 @@ function playGame(){
         
         winCheck(playerO)
         winCheck(playerX)
-        changePlayer();                                        //this will alternate players after a move is selected and also update Modal text
+        changePlayer();                                        //this will alternate players after a move is selected and also update Modal text 
         
     }));
 };
@@ -59,8 +59,9 @@ function changePlayer(){
 
     currentPlayer = (currentPlayer == "X") ? "O" : "X";
 
-    modalHeader.textContent = `It's ${currentPlayer}'s Turn!`
-    if(winCheck(playerO) === true){
+    modalHeader.textContent = `It's ${currentPlayer}'s Turn!` //modal text changes players turn during gameplay.
+
+    if(winCheck(playerO) === true){                             // this if statement determines the actions for a win scenario and a draw.
         window.location.replace("winner.html")
     }else if(winCheck(playerX) === true){
         window.location.replace("winnerX.html")
