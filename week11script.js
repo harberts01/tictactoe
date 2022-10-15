@@ -1,4 +1,3 @@
-
 const button = document.querySelectorAll("#gameBtn");
 const restartBtn = document.querySelector("  #restartButton");
 const cell = document.querySelector("#cell");
@@ -17,6 +16,7 @@ let winConditions = [
     [0, 4, 8],
     [2, 4, 6]
 ];
+
 //player arrays are filled when a button is clicked
 let playerO = [];
 let playerX = [];
@@ -26,36 +26,39 @@ playGame();//function called to begin game.
 function playGame(){
     
     button.forEach(button => button.addEventListener("click", () => {
-        button.className = 'btn btn-lg btn-primary w-50 m-5';//changes button visual from dark to primary on X's move
-        button.textContent = `${currentPlayer}`;//manipulates text inside button to label appropriate player
-        button.style.fontSize = '40px';// manipulates button font size to create a more visually appeling aspect.
-        let index = button.getAttribute("cellIndex");//retrieves index attribute given to buttons in HTML so that it can be logged
-            if(currentPlayer == "O"){//this if statement manipulates the buttons when it is O's turn; also pushes index numbers to correct player arrays.
-                button.className = 'btn btn-lrg btn-danger w-50 m-5'
-                playerO.push(Number(index));
-            }else{
-                playerX.push(Number(index));
-            };
+        button.className = 'btn btn-lg btn-primary w-50 m-5';   //changes button visual from dark to primary on X's move
+
+        button.textContent = `${currentPlayer}`;                //manipulates text inside button to label appropriate player
+
+        button.style.fontSize = '40px';                         // manipulates button font size to create a more visually appeling aspect.
+
+        let index = button.getAttribute("cellIndex");           //retrieves index attribute given to buttons in HTML so that it can be logged
+
+        if(currentPlayer == "O"){                               //this if statement manipulates the buttons when it is O's turn; also pushes index numbers to correct player arrays.
+            button.className = 'btn btn-lrg btn-danger w-50 m-5'
+            playerO.push(Number(index));                        //changes the string index into a number and pushes to player arrays to compare the winConditions.
+        }else{
+            playerX.push(Number(index));
+        };
+
         window.setTimeout(function(){
             $('#Modal').modal('hide');
         }, 1100);
         
         winCheck(playerO)
         winCheck(playerX)
-        changePlayer();//this will alternate players after a move is selected and also update Modal text
+        changePlayer();                                        //this will alternate players after a move is selected and also update Modal text
         
     }));
-
-
 };
 
-
-
-
-
+//this function changes the player and then decides the action taken if a win scenario is true or if 
+//the match is a draw.
 
 function changePlayer(){
+
     currentPlayer = (currentPlayer == "X") ? "O" : "X";
+
     modalHeader.textContent = `It's ${currentPlayer}'s Turn!`
     if(winCheck(playerO) === true){
         window.location.replace("winner.html")
@@ -68,8 +71,7 @@ function changePlayer(){
 };
 
 //this function will create a win scenario. win will = true when the if statement conditions
-//have been met. 
-
+//have been met.
 
 function winCheck(playerArry){
     
@@ -82,17 +84,9 @@ function winCheck(playerArry){
     } return false;
 }
 
-
-
-
-
+//this eventListener is added to restart the game. It is set to reload the main page.
 restartBtn.addEventListener("click", () => {
+
     window.location.replace("game.html")
+
 });
-
-
-
-
-    
-
-
